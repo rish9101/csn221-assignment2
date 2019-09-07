@@ -1,0 +1,57 @@
+NAME - RISHI RANJAN
+ENROLLMENT NUMBER - 18114066
+BATCH - 03
+
+
+
+
+SIMPLE RISC CODE FOR RAMANUJAN NUMBER
+
+
+
+
+mov r1, 0
+mov r2, 4000
+mov r3, r1
+
+.label1:
+	add r3,r3,1
+	cmp r3,r2
+	bgt .ret
+	mov r4,0
+	mov r5,1
+	
+	.label2:
+		mov r7,r5
+		mul r8,r7,r5
+		mul r8,r8,r5
+		cmp r8,r3
+		bgt .label4
+		add r6, r5,1
+		
+		.label3:
+			mov r9,r6
+			mul r10,r9,r6
+			mul r10,r10,r6
+			add r10,r10,r8
+			cmp r10,r3
+			add r5,r5,1
+			bgt .label2
+			be .label5
+			.label6:
+				add r4,r4,1
+				add r5,r5,1
+
+			b .label3
+
+	.label4
+		cmp r4,2
+		be .ret
+		b .label1
+
+.ret
+	exit
+
+
+
+####FINAL ANSWER IS IN r3 register
